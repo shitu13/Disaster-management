@@ -1,0 +1,34 @@
+1. There will be two type of users. only volunteers can register. admins will be set directly from database. 
+
+1. Register Page
+Path: /register
+Permission: Open to anyone
+Description:
+Allows volunteers to sign up with their name, email, phone number, password.  The password is hashed and stored in the database. use jwt fro user registration. 
+
+After registering, an approval process handled by the admin will verify the volunteer before granting access.
+
+Features:
+Registration form with necessary validation.
+Backend: A POST request that stores volunteer details in the database.
+
+2. Login Page
+Path: /login
+Permission: Open to anyone
+Description:
+Allows both admins and volunteers to log in.
+Based on role, users will be redirected to their respective dashboards.
+Features:
+Login form with email/username and password.
+Backend: Authentication through JWT or session cookies.
+Redirection:
+Admins -> Admin Dashboard. admins will see a page that shows the list of volunteers. and the status of the volunteer. they can approve or delete volunteer. 
+
+Volunteers -> Volunteer Dashboard. It will be a profile page that shows the information that the volunteer provided. such as name, email, phone, password etc. 
+
+Error handling for invalid credentials.
+
+3. Homepage
+Path: /home or /
+
+Permission: Accessible to anyone
